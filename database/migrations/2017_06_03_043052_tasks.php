@@ -14,12 +14,13 @@ class Tasks extends Migration
     public function up()
     {
         Schema::create('tasks', function (Blueprint $table) {
-            $table->increments('id');
+            $table->uuid('id');
+            $table->primary('id');
             $table->string('title');
             $table->longText('description');
             $table->date('date');
             $table->time('time');
-            $table->integer('category_id')->unsigned();
+            $table->uuid('category_id');
             $table->foreign('category_id')->references('id')->on('categories');
         });
     }

@@ -13,10 +13,13 @@ class Categories extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('categories');
+
         Schema::create('categories', function (Blueprint $table) {
-            $table->increments('id');
+            $table->uuid('id');
+            $table->primary('id');
             $table->string('name');
-            $table->integer('color_id')->unsigned();
+            $table->uuid('color_id');
             $table->foreign('color_id')->references('id')->on('colors');
         });
     }
