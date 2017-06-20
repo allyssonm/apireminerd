@@ -9,8 +9,9 @@ class Category extends Model
     protected $table = 'categories';
 
     public $timestamps = false;
+    public $incrementing = false;
 
-    protected $fillable = array('name', 'color_id');
+    protected $fillable = array('id', 'name', 'color_id');
 
     public function getCategories()
     {

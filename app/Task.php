@@ -9,8 +9,9 @@ class Task extends Model
     protected $table = 'tasks';
 
     public $timestamps = false;
+    public $incrementing = false;
 
-    protected $fillable = array('title', 'description', 'date', 'time', 'category_id');
+    protected $fillable = array('id', 'title', 'description', 'date', 'time', 'category_id');
 
     public function getTasks()
     {

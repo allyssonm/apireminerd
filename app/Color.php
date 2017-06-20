@@ -10,8 +10,9 @@ class Color extends Model
     protected $table = 'colors';
 
     public $timestamps = false;
+    public $incrementing = false;
 
-    protected $fillable = array('name', 'hexadecimal');
+    protected $fillable = array('id', 'name', 'hexadecimal');
 
     public function getColors()
     {
